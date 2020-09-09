@@ -1,0 +1,98 @@
+<ion-header mode="ios" color="danger">
+  <ion-toolbar mode="ios" color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Filter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="filterPage">
+  <ion-row class="brandRow">
+    <ion-col size="12" class="ion-padding-start">
+      <h4 class="ion-no-margin"> Brand </h4>
+    </ion-col>
+    <ion-col size="3" class="brand ion-text-center">
+      Chair
+    </ion-col>
+    <ion-col size="3" class="brand ion-text-center">
+      Chair
+    </ion-col>
+    <ion-col size="3" class="brand ion-text-center">
+      Chair
+    </ion-col>
+    <ion-col size="3" class="brand ion-text-center">
+      Chair
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-padding-top">
+    <ion-col size="12" class="ion-padding-start">
+      <h4 class="ion-no-margin"> Categories </h4>
+    </ion-col>
+    <ion-row class="ion-padding">
+      <ion-col size="4">
+        <ion-card class="ion-no-margin cardSquare">
+          Accent Chairs
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card class="ion-no-margin cardSquare">
+          Toddler & kids Chair
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card class="ion-no-margin cardSquare">
+          Accent Chairs
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="4">
+        <ion-card class="ion-no-margin cardSquare">
+          Accent Chairs
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card class="ion-no-margin cardSquare">
+          Toddler & kids Chair
+        </ion-card>
+      </ion-col>
+      <ion-col size="4">
+        <ion-card class="ion-no-margin cardSquare">
+          Accent Chairs
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-row>
+
+  <ion-row class="colorFilter ion-padding-top">
+    <ion-col size="12" class="ion-padding-start">
+      <h4 class="ion-no-margin"> Color </h4>
+    </ion-col>
+    <div class="colorScroll">
+      <div class="image redColor"></div>
+      <div class="image yellowColor"></div>
+      <div class="image lightyellowColor"></div>
+      <div class="image darkyellowColor"></div>
+      <div class="image blueColor"></div>
+      <div class="image redColor"></div>
+      <div class="image yellowColor"></div>
+      <div class="image lightyellowColor"></div>
+      <div class="image darkyellowColor"></div>
+      <div class="image blueColor"></div>
+    </div>
+  </ion-row>
+
+  <ion-row class="ion-padding-top">
+    <ion-col size="12" class="ion-padding-start">
+      <h4 class="ion-no-margin"> Price Range </h4>
+    </ion-col>
+    <ion-col size="12">
+      <ion-range min="25" max="500" step="2" color="danger" ticks="true">
+        <ion-label slot="start">$25</ion-label>
+        <ion-label slot="end">$500</ion-label>
+      </ion-range>
+    </ion-col>
+  </ion-row>
+</ion-content>

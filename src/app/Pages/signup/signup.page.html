@@ -1,0 +1,87 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button color="danger"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="danger">SignUp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding signupPage">
+  <ion-row>
+    <form [formGroup]="signUpForm" class="formWidth">
+      <ion-col size="12">
+        <ion-item mode="ios" class="ion-no-padding">
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input type="email" name="email" formControlName="email"></ion-input>
+        </ion-item>
+        <div class="ion-padding-top"
+          *ngIf="!signUpForm.controls['email'].valid && (signUpForm.controls['email'].dirty || signUpForm.controls['email'].touched)">
+          <div *ngIf="signUpForm.controls['email'].hasError('required')">
+            <ion-text color="danger">Email is required.</ion-text>
+          </div>
+          <div *ngIf="signUpForm.controls['email'].hasError('email')">
+            <ion-text color="danger">Enter proper email.</ion-text>
+          </div>
+        </div>
+        <ion-item class="ion-margin-top ion-no-padding" mode="ios">
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input type="password" clearInput="true" clearOnEdit="true" formControlName="password" name="password">
+          </ion-input>
+        </ion-item>
+        <div class="ion-padding-top"
+          *ngIf="!signUpForm.controls['password'].valid && (signUpForm.controls['password'].dirty || signUpForm.controls['password'].touched)">
+          <div *ngIf="signUpForm.controls['password'].hasError('required')">
+            <ion-text color="danger">Password is required.</ion-text>
+          </div>
+          <div *ngIf="signUpForm.controls['password'].hasError('maxlength')">
+            <ion-text color="danger">Password length maximum is 20.</ion-text>
+          </div>
+          <div *ngIf="signUpForm.controls['password'].hasError('pattern')">
+            <ion-text color="danger"> Your password MUST be 8 characters
+              long, and contain each of the following: a uppercase letter, a lowercase
+              letter, a number, and a special
+              character. </ion-text>
+          </div>
+        </div>
+        <ion-item class="ion-margin-top ion-no-padding" mode="ios">
+          <ion-label position="stacked">Phone</ion-label>
+          <ion-input type="number" name="phone" formControlName="phone"></ion-input>
+        </ion-item>
+        <div class="ion-padding-top"
+          *ngIf="!signUpForm.controls['phone'].valid && (signUpForm.controls['phone'].dirty || signUpForm.controls['phone'].touched)">
+          <div *ngIf="signUpForm.controls['phone'].hasError('required')">
+            <ion-text color="danger">Phone is required.</ion-text>
+          </div>
+          <div *ngIf="signUpForm.controls['phone'].hasError('pattern')">
+            <ion-text color="danger"> Your hpone MUST be 10 characters
+              long.</ion-text>
+          </div>
+        </div>
+        <ion-item class="ion-margin-top ion-no-padding" mode="ios">
+          <ion-label position="stacked">Date Of Birth</ion-label>
+          <ion-datetime displayFormat="MMM DD, YYYY" placeholder="Select Date" mode="ios" name="dob"
+            formControlName="dob"></ion-datetime>
+        </ion-item>
+        <div class="ion-padding-top"
+          *ngIf="!signUpForm.controls['dob'].valid && (signUpForm.controls['dob'].dirty || signUpForm.controls['dob'].touched)">
+          <div *ngIf="signUpForm.controls['dob'].hasError('required')">
+            <ion-text color="danger">Date Of Birth is required.</ion-text>
+          </div>
+        </div>
+      </ion-col>
+    </form>
+    <ion-col class="ion-text-right fabButtonPadding" size="12">
+      <ion-fab horizontal="end" class="ion-padding-end">
+        <ion-fab-button color="danger" [disabled]="!signUpForm.valid" (click)="submitForm(signUpForm)">
+          <ion-icon name="arrow-forward" mode="md"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-col>
+    <ion-col size="12" class="ion-text-center alreadySign">
+      <h4>Already have an account ? <ion-text color="danger" routerLink="/login"> Sign In
+        </ion-text>
+      </h4>
+    </ion-col>
+  </ion-row>
+</ion-content>

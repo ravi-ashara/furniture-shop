@@ -1,0 +1,91 @@
+<ion-header mode="ios" color="danger">
+  <ion-toolbar mode="ios" color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding categoriesPage">
+  <div *ngIf="!showskeleton">
+    <ion-card class="ion-no-margin setCardPadding ion-margin-bottom" mode="ios">
+      <ion-item lines="none" class="ion-no-padding" mode="ios" routerLink="/product-details/6">
+        <ion-thumbnail slot="start">
+          <img src="assets/images/AccentChair.jpg" class="setBorderRadius">
+        </ion-thumbnail>
+        <ion-label>Accent Chairs
+          <p>1500 Items</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card class="ion-no-margin setCardPadding ion-margin-bottom" mode="ios">
+      <ion-item lines="none" class="ion-no-padding" mode="ios" routerLink="/product-details/5">
+        <ion-thumbnail slot="start">
+          <img src="assets/images/livingroom.jpg" class="setBorderRadius">
+        </ion-thumbnail>
+        <ion-label>Living Room Furniture
+          <p>1000 Items</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card class="ion-no-margin setCardPadding" mode="ios">
+      <ion-item lines="none" class="ion-no-padding" mode="ios">
+        <ion-thumbnail slot="start">
+          <img src="assets/images/chair.jpg" class="setBorderRadius">
+        </ion-thumbnail>
+        <ion-label>Office Furniture
+          <p>600 Items</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  </div>
+  <div *ngIf="showskeleton">
+    <ion-card class="ion-no-margin setCardPadding ion-margin-bottom" mode="ios">
+      <ion-item lines="none" class="ion-no-padding" mode="ios">
+        <ion-thumbnail slot="start" class="setBorderRadius">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 40%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card class="ion-no-margin setCardPadding ion-margin-bottom" mode="ios">
+      <ion-item lines="none" class="ion-no-padding" mode="ios">
+        <ion-thumbnail slot="start" class="setBorderRadius">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 40%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-card class="ion-no-margin setCardPadding" mode="ios">
+      <ion-item lines="none" class="ion-no-padding" mode="ios">
+        <ion-thumbnail slot="start" class="setBorderRadius">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 40%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  </div>
+</ion-content>

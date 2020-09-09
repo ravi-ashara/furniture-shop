@@ -1,0 +1,16 @@
+.loginPage {
+  .formWidth {
+    width: 100%;
+  }
+  .socialText {
+    padding-top: 20%;
+    padding-bottom: 5%;
+  }
+  .setButtonBorderColor {
+    border: 1px solid var(--ion-color-danger);
+    border-radius: 5px;
+    .setSocialImgSize {
+      width: 25px;
+    }
+  }
+}

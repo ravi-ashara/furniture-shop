@@ -1,0 +1,78 @@
+<ion-header mode="ios">
+  <ion-toolbar mode="ios">
+    <ion-buttons slot="start">
+      <ion-back-button color="danger"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="danger">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding loginPage">
+  <ion-row>
+    <form [formGroup]="loginForm" class="formWidth">
+      <ion-col size="12">
+        <ion-item class="ion-no-padding">
+          <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input type="email" name="email" formControlName="email"></ion-input>
+        </ion-item>
+        <div class="ion-padding-top"
+          *ngIf="!loginForm.controls['email'].valid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">
+          <div *ngIf="loginForm.controls['email'].hasError('required')">
+            <ion-text color="danger">Email is required.</ion-text>
+          </div>
+          <div *ngIf="loginForm.controls['email'].hasError('email')">
+            <ion-text color="danger">Enter proper email.</ion-text>
+          </div>
+        </div>
+        <ion-item class="ion-margin-top ion-no-padding">
+          <ion-label position="stacked">Password <ion-text color="danger">*</ion-text>
+          </ion-label>
+          <ion-input type="password" clearInput="true" clearOnEdit="true" formControlName="password" name="password">
+          </ion-input>
+        </ion-item>
+        <div class="ion-padding-top"
+          *ngIf="!loginForm.controls['password'].valid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+          <div *ngIf="loginForm.controls['password'].hasError('required')">
+            <ion-text color="danger">Password is required.</ion-text>
+          </div>
+          <div *ngIf="loginForm.controls['password'].hasError('maxlength')">
+            <ion-text color="danger">Password length maximum is 20.</ion-text>
+          </div>
+          <div *ngIf="loginForm.controls['password'].hasError('pattern')">
+            <ion-text color="danger"> Your password MUST be 8 characters
+              long, and contain each of the following: a uppercase letter, a lowercase
+              letter, a number, and a special
+              character. </ion-text>
+          </div>
+        </div>
+      </ion-col>
+    </form>
+    <ion-col class="ion-text-right" size="12">
+      <ion-button fill="clear" color="danger">
+        <ion-text color="danger"> Forgot Password?</ion-text>
+      </ion-button>
+    </ion-col>
+    <ion-col class="ion-text-right" size="12">
+      <ion-fab horizontal="end" class="ion-padding-end">
+        <ion-fab-button color="danger" [disabled]="!loginForm.valid" (click)="submitForm(loginForm)">
+          <ion-icon name="arrow-forward" mode="md"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-col>
+
+    <ion-col size="12" class="ion-text-center socialText">
+      <h4> Login With Social</h4>
+    </ion-col>
+    <ion-col size="6" class="ion-text-right">
+      <ion-button color="light" fill="outline" class="setButtonBorderColor">
+        <img src="assets/images/Google.png" class="setSocialImgSize" />
+      </ion-button>
+    </ion-col>
+    <ion-col size="6" class="ion-text-left">
+      <ion-button color="light" fill="outline" class="setButtonBorderColor">
+        <img src="assets/images/FB.png" class="setSocialImgSize" />
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
