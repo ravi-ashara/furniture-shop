@@ -28,6 +28,6 @@ export class HomePage {
     this.menuCtrl.enable(true);
     setTimeout(() => {
       this.showskeleton = false;
-    }, 3500);
+    }, 2000);
   }
 }
