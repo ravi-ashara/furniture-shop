@@ -33,6 +33,12 @@ export class AppComponent {
       isSelected: false
     },
     {
+      title: 'Cart',
+      url: '/cart',
+      icon: 'cart',
+      isSelected: false
+    },
+    {
       title: 'Filter',
       url: '/filter',
       icon: 'funnel',
