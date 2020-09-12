@@ -45,7 +45,11 @@ const routes: Routes = [
     path: 'product-details/:id',
     loadChildren: () => import('./Pages/product-details/product-details.module').then(m => m.ProductDetailsPageModule),
     canActivate: [AuthService]
+  },  {
+    path: 'cart',
+    loadChildren: () => import('./Pages/cart/cart.module').then( m => m.CartPageModule)
   }
+
 ];
 
 @NgModule({

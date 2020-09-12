@@ -1,0 +1,58 @@
+<ion-header mode="ios" color="danger">
+  <ion-toolbar mode="ios" color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cart</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="deleteCartItem()">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding cartPage">
+  <ion-card class="ion-no-margin setCardPadding ion-margin-bottom" mode="ios"
+    *ngFor="let item of cartArray; let i = index">
+    <ion-item lines="none" details="false" class="ion-no-padding" mode="ios">
+      <ion-thumbnail slot="start">
+        <img src="assets/images/AccentChair.jpg" class="setBorderRadius">
+      </ion-thumbnail>
+      <ion-label>Accent Chairs
+        <p>$ {{item?.price}}</p>
+      </ion-label>
+      <div *ngIf="!isDelete">
+        <ion-icon name="remove-circle" class="ion-no-margin" color="danger" size="large"
+          (click)="changeQuantity('decreaseQuantity',i)">
+        </ion-icon>
+        <div class="ion-padding-horizontal setCountSize">{{item?.quantity}} </div>
+        <ion-icon name="add-circle" class="ion-no-margin" color="success" size="large"
+          (click)="changeQuantity('increaseQuantity',i)">
+        </ion-icon>
+      </div>
+      <ion-checkbox *ngIf="isDelete" mode="md" color="danger" (ionChange)="deleteChecked(item,$event)"></ion-checkbox>
+    </ion-item>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-row>
+    <ion-col size="6" class="ion-text-center">
+      <p>Total: $1250.00</p>
+    </ion-col>
+    <ion-col size="6" class="ion-text-right">
+      <ion-button color="danger" shape="round" *ngIf="!isDelete">
+        Checkout
+        <ion-ripple-effect type="bounded"></ion-ripple-effect>
+        <ion-icon name="arrow-forward" slot="end"></ion-icon>
+      </ion-button>
+
+      <ion-button color="danger" shape="round" *ngIf="isDelete" (click)="deleteSelectedItems()">
+        Delete Items
+        <ion-ripple-effect type="bounded"></ion-ripple-effect>
+        <ion-icon name="trash" slot="end"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,16 @@
+.cartPage {
+  .setCardPadding {
+    padding: 5px;
+
+    .setBorderRadius {
+      border-radius: 10px;
+    }
+
+    .setCountSize {
+      font-size: 20px;
+      display: inline-block;
+      vertical-align: super;
+      font-weight: 600;
+    }
+  }
+}
