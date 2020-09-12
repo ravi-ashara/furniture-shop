@@ -1,0 +1,94 @@
+<ion-header mode="ios" color="danger">
+  <ion-toolbar mode="ios" color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Order History</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding historyPage">
+  <ion-card class="ion-no-margin setCardPadding ion-margin-bottom" mode="ios" *ngIf="showSkeleton">
+    <ion-row>
+      <ion-col size="6">
+        <ion-skeleton-text animated style="width:80%;height: 20px;"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width:50%;height: 20px;"></ion-skeleton-text>
+      </ion-col>
+      <ion-col size="6" class="ion-text-right">
+        <ion-skeleton-text animated style="width:50%;height: 20px;float: right;"></ion-skeleton-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-skeleton-text animated style="width:100%;height: 100px;"></ion-skeleton-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-skeleton-text animated style="width:100%;height: 40px;"></ion-skeleton-text>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+  <section *ngIf="!showSkeleton">
+    <ion-card class="ion-no-margin setCardPadding ion-margin-bottom" mode="ios" *ngFor="let item of orderArray">
+      <ion-row class="ion-margin-bottom">
+        <ion-col size="6">
+          <ion-text color="danger">
+            Order #21421
+          </ion-text>
+        </ion-col>
+        <ion-col size="6" class="ion-text-right">
+          September 12, 2020
+        </ion-col>
+        <ion-col size="12">
+          <ion-icon src="assets/images/bus.svg" class="setIconMiddle"></ion-icon> Shipped
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-bottom">
+        <ion-col size="7">
+          <strong>Nockeby</strong>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center">
+          1 pcs
+        </ion-col>
+        <ion-col size="3" class="ion-text-right">
+          $296.36
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-bottom">
+        <ion-col size="7">
+          <strong>Mellby</strong>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center">
+          2 pcs
+        </ion-col>
+        <ion-col size="3" class="ion-text-right">
+          $296.36
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-bottom">
+        <ion-col size="7">
+          <strong>Strandmond</strong>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center">
+          3 pcs
+        </ion-col>
+        <ion-col size="3" class="ion-text-right">
+          $1996.36
+        </ion-col>
+      </ion-row>
+      <ion-row class="setTotalRow">
+        <ion-col size="7" class="ion-padding-vertical">
+          <ion-icon src="assets/images/location.svg" class="setIconMiddle"></ion-icon> Palo Alto, India
+        </ion-col>
+        <ion-col size="2" class="ion-padding-vertical ion-text-right">
+          Total
+        </ion-col>
+        <ion-col size="3" class="ion-padding-vertical ion-text-right">
+          <strong>$2896.36</strong>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </section>
+</ion-content>

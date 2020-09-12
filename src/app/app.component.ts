@@ -44,6 +44,13 @@ export class AppComponent {
       icon: 'funnel',
       isSelected: false
     }
+    ,
+    {
+      title: 'Order History',
+      url: '/history',
+      icon: 'briefcase',
+      isSelected: false
+    }
   ];
 
   constructor(
