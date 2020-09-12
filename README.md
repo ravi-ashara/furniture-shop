@@ -10,8 +10,11 @@
 <img src="src/assets/screenshots/register.png" width="210"/>&nbsp;
 <img src="src/assets/screenshots/home.png" width="210"/>&nbsp;
 <img src="src/assets/screenshots/details.png" width="210"/>&nbsp;
+<img src="src/assets/screenshots/cart.png" width="210"/>&nbsp;
+<img src="src/assets/screenshots/cart_delete.png" width="210"/>&nbsp;
 <img src="src/assets/screenshots/list.png" width="210"/>&nbsp;
-<img src="src/assets/screenshots/categories.png" width="210"/>
+<img src="src/assets/screenshots/categories.png" width="210"/>&nbsp;
+<img src="src/assets/screenshots/history.png" width="210"/>
 
 ## OPEN PROJECT ON BROWSER
 
